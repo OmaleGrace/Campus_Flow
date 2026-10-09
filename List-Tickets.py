@@ -21,6 +21,9 @@
 # }
 
 
+## F2 — LIST / VIEW: Show all tickets and details for one chosen ticket.
+
+
 def list_tickets(tickets):
     if not tickets:
         print("No ticket available")
@@ -70,3 +73,26 @@ def view_ticket(tickets):
 # list_tickets(tickets)
 # view_ticket(tickets)
 
+
+## ✳️ F3 — ASSIGN: Assign a ticket to a non-empty staff member name; reject unknown ticket IDs.
+
+def assign_ticket(tickets):
+    if not tickets:
+        print("No ticket available")
+        return
+
+    ticket_id = input("Enter ticket ID: ").strip().upper()
+
+    if ticket_id not in tickets:
+        print("Error: Ticket ID does not exist.")
+        return
+
+    staff_name = input("Enter staff member's name: ").strip()
+
+    if not staff_name:
+        print("Error: Staff name cannot be empty.")
+        return
+
+    tickets[ticket_id]["assigned_to"] = staff_name
+
+    print(f"Ticket {ticket_id} has been assigned to {staff_name}.")
