@@ -16,25 +16,6 @@ def campus_flow():
         print(design)
         print("Menu")
         print("᠆᠆᠆᠆᠆")
-        print("1. generate Ticket")
-        print("2. list")
-        print("3. view")
-        print("4. assign")
-        print("5. reports")
-        print("6. exit")
-        option=input("select option:")
-        if option=="1":
-            Create_ticket()
-        elif option=="2":
-            list_ticket()
-        elif option=="3":
-            view_ticket()
-        elif option=="4":
-            pass
-        elif option=="5":
-            pass
-        elif option=="6":
-            print("exited...")
         print("1. Generate Ticket")
         print("2. List Tickets")
         print("3. View Ticket")
@@ -43,39 +24,25 @@ def campus_flow():
         print("6. Change Ticket Status")
         print("7. Work Queue")
         print("8. Exit")
-
         option = input("Select option: ")
-
         if option == "1":
-            print(Create_ticket())
-
+            Create_ticket()
         elif option == "2":
-            print(list_ticket())
-
+            list_ticket()
         elif option == "3":
-            print(view_ticket())
-
+            view_ticket()
         elif option == "4":
             assign_ticket(tickets_database)
-
         elif option == "5":
             display_report(tickets_database)
-
         elif option == "6":
             change_ticket_status(tickets_database)
-
         elif option == "7":
             display_work_queue(tickets_database)
-
         elif option == "8":
             print("Exited...")
             break
-
         else:
             print("invalid option..")  
-campus_flow()
-            print("Invalid option")
-
-
 if __name__ == "__main__":
     campus_flow()
