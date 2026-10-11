@@ -5,6 +5,7 @@ def view_ticket():
     choose=input("Enter Ticket_ID:")
     if choose in tickets_database() or tickets_database() !={}:
         print("*Ticket Details*")
-        print(f"{tickets_database()[choose]}")
+        print(tickets_database()[choose])
     else:
         print("invalid id number/empty data")
+
