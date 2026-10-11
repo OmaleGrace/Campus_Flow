@@ -1,4 +1,4 @@
-from tickets import read_data
+from campusflow.tickets import read_data
 
 def view_ticket():
     tickets_database=read_data
