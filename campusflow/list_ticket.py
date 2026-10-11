@@ -5,4 +5,3 @@ def list_ticket():
     print("**Tickets-ID**:")
     for id_list in tickets_database():
         print(id_list)
-list_ticket()
