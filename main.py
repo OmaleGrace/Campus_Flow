@@ -4,7 +4,7 @@ from campusflow.view_ticket import view_ticket
 
 def campus_flow():
     while True:
-        design="🀫"*50
+        design="🀫"*51
         print()
         print("****Welcome To CampusFlow Helper Desk Service****")
         print(design)
