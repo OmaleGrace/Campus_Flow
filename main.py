@@ -31,5 +31,5 @@ def campus_flow():
             print("exited...")
             break
         else:
-            print("invalid option")  
+            print("invalid option..")  
 campus_flow()
