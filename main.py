@@ -9,12 +9,32 @@ from campusflow.reports import display_report
 
 def campus_flow():
     while True:
+        design="🀫"*51
         design = "🀫" * 50
         print()
         print("****Welcome To CampusFlow Helper Desk Service****")
         print(design)
         print("Menu")
         print("᠆᠆᠆᠆᠆")
+        print("1. generate Ticket")
+        print("2. list")
+        print("3. view")
+        print("4. assign")
+        print("5. reports")
+        print("6. exit")
+        option=input("select option:")
+        if option=="1":
+            Create_ticket()
+        elif option=="2":
+            list_ticket()
+        elif option=="3":
+            view_ticket()
+        elif option=="4":
+            pass
+        elif option=="5":
+            pass
+        elif option=="6":
+            print("exited...")
         print("1. Generate Ticket")
         print("2. List Tickets")
         print("3. View Ticket")
@@ -52,6 +72,8 @@ def campus_flow():
             break
 
         else:
+            print("invalid option..")  
+campus_flow()
             print("Invalid option")
 
 
