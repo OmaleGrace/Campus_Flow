@@ -112,5 +112,8 @@ def Create_ticket():
     tickets_database[id_number]=result
     with open("database.json", "w") as file:
         store_data= json.dump(tickets_database, file, indent=4)
-    return store_data 
-print("Data successfully saved")
+    return store_data
+    if store_data: 
+        print("Data successfully saved")
+    else:
+        pass
