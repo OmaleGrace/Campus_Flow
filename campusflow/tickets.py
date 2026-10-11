@@ -2,7 +2,6 @@ from itertools import count
 import json
 import os
 
-
 def read_data():
     if os.path.exists("database.json"):
         with open("database.json", "r") as file:
