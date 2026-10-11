@@ -1,0 +1,22 @@
+{
+    "T001": {
+        "id": "T001",
+        "title": "Grace",
+        "category": "Network",
+        "urgency": "high",
+        "affected_users": 15,
+        "priority": "critical",
+        "status": "resolved",
+        "assigned_to": "Grace"
+    },
+    "T002": {
+        "id": "T002",
+        "title": "gh",
+        "category": "Network",
+        "urgency": "medium",
+        "affected_users": 10,
+        "priority": "high",
+        "status": "Open",
+        "assigned_to": null
+    }
+}

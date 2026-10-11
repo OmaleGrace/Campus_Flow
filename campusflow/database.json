@@ -1,0 +1,12 @@
+{
+    "T001": {
+        "id": "T001",
+        "title": "Campus Wi-Fi is down",
+        "category": "Network",
+        "urgency": "high",
+        "affected_users": 12,
+        "priority": "critical",
+        "status": "resolved",
+        "assigned_to": "Grace"
+    }
+}
