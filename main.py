@@ -18,11 +18,11 @@ def campus_flow():
         print("6. exit")
         option=input("select option:")
         if option=="1":
-            print(Create_ticket())
+            Create_ticket()
         elif option=="2":
-            print(list_ticket())
+            list_ticket()
         elif option=="3":
-            print(view_ticket())
+            view_ticket()
         elif option=="4":
             pass
         elif option=="5":
