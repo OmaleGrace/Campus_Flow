@@ -117,5 +117,4 @@ def Create_ticket():
         print("Data successfully saved")
     else:
         pass
-    return
 
