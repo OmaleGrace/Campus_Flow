@@ -1,3 +1,6 @@
+import json
+
+
 def assign_ticket(tickets):
     if not tickets:
         print("No tickets available.")
@@ -11,7 +14,7 @@ def assign_ticket(tickets):
 
     ticket = tickets[ticket_id]
 
-    if ticket["status"] == "resolved":
+    if ticket["status"].strip().lower() == "resolved":
         print("Error: Reopen the ticket before assigning it.")
         return
 
@@ -22,5 +25,12 @@ def assign_ticket(tickets):
         return
 
     ticket["assigned_to"] = staff_name
+
+    try:
+        with open("database.json", "w", encoding="utf-8") as file:
+            json.dump(tickets, file, indent=4)
+    except OSError as error:
+        print(f"Error saving assignment: {error}")
+        return
 
     print(f"Ticket {ticket_id} assigned to {staff_name} successfully.")

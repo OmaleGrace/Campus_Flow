@@ -1,5 +1,4 @@
-from tickets import read_data
-
+from campusflow.tickets import read_data
 def list_ticket():
     tickets_database=read_data
     print("**Tickets-ID**:")

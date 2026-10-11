@@ -1,3 +1,4 @@
+import json
 VALID_STATUSES = ("open", "in_progress", "resolved")
 
 
@@ -5,13 +6,11 @@ def update_ticket_status(tickets, ticket_id, new_status):
     ticket_id = ticket_id.strip().upper()
     new_status = new_status.strip().lower()
 
-    # Check whether the ticket exists.
     if ticket_id not in tickets:
         raise ValueError("Ticket ID does not exist.")
 
     ticket = tickets[ticket_id]
 
-    # Validate the requested status.
     if new_status not in VALID_STATUSES:
         raise ValueError(
             "Invalid status. Choose open, in_progress, or resolved."
@@ -19,30 +18,24 @@ def update_ticket_status(tickets, ticket_id, new_status):
 
     current_status = ticket["status"].strip().lower()
 
-    # Check whether the ticket's current status is valid.
     if current_status not in VALID_STATUSES:
         raise ValueError("The ticket has an invalid current status.")
 
-    # Do not allow a ticket to be moved to its current status.
     if current_status == new_status:
         raise ValueError(
             f"Ticket is already in {current_status} status."
         )
 
-    # A ticket must be assigned before work can begin.
     if current_status == "open" and new_status == "in_progress":
         if not ticket.get("assigned_to"):
             raise ValueError(
                 "Cannot start work on an unassigned ticket."
             )
-
         ticket["status"] = "in_progress"
 
-    # Work can only be completed from in_progress.
     elif current_status == "in_progress" and new_status == "resolved":
         ticket["status"] = "resolved"
 
-    # Reopening a resolved ticket must be explicit.
     elif current_status == "resolved" and new_status == "open":
         ticket["status"] = "open"
 
@@ -52,8 +45,15 @@ def update_ticket_status(tickets, ticket_id, new_status):
             f"to {new_status}."
         )
 
-    return ticket
+    try:
+        with open("database.json", "w", encoding="utf-8") as file:
+            json.dump(tickets, file, indent=4)
+    except OSError as error:
+        raise ValueError(
+            f"Could not save ticket status: {error}"
+        ) from error
 
+    return ticket
 
 def change_ticket_status(tickets):
     if not tickets:
