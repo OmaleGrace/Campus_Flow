@@ -1,3 +1,5 @@
+# LEARNER B
+
 # Fellow: Omale Ooja Grace
 
 ## Interaction #1 — Ticket Assignment (F3)
@@ -85,10 +87,6 @@ All six work queue tests passed. During manual testing, the program displayed No
 
 **Decision:**
 I accepted the guidance after the tests confirmed the expected filtering and sorting behavior.
-Related file/commit:
-- File: campusflow/work_queue.py
-- Test file: campusflow/test_work_queue.py
-- Commit: d51360e — Implement ticket work queue (F5)
 
 **What I can now explain without AI:**
 I can explain how filtering removes tickets that no longer need attention and how sorting helps staff prioritize the remaining work.
@@ -116,11 +114,6 @@ All six report tests passed. The manual output matched the ticket data I was tes
 
 **Decision:**
 I accepted the report implementation after checking it against the test results and the actual ticket data. I also learned to verify AI-generated code by running tests instead of assuming that suggested code is correct.
-
-**Related file/commit:**
-- File: campusflow/reports.py
-- Test file: campusflow/test_reports.py
-- Commit: Implement ticket reports (F6)
 
 **What I can now explain without AI:**
 I can explain how to count tickets by status and priority, calculate the total number of tickets, and separate data processing from displaying the results.
