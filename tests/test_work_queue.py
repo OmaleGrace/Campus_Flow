@@ -1,5 +1,5 @@
 import unittest
-from work_queue import get_work_queue
+from campusflow.work_queue import get_work_queue
 
 
 class TestWorkQueue(unittest.TestCase):
