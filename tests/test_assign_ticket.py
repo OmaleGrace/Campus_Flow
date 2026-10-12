@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from assign_ticket import assign_ticket
+from campusflow.assign_ticket import assign_ticket
 
 
 class TestAssignTicket(unittest.TestCase):

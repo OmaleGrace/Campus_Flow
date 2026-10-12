@@ -1,6 +1,6 @@
 import unittest
 
-from workflow import update_ticket_status
+from campusflow.workflow import update_ticket_status
 
 
 def make_ticket(status="open", assigned_to=None):
