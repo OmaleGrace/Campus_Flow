@@ -9,7 +9,7 @@ def read_data():
         print("Data successfully reloaded.")
         return reload_data
     else:
-        print("No data stored; restart")
+        print("No data stored")
         return {}
 tickets_database=read_data()
 start_number = 1
@@ -29,57 +29,64 @@ def Create_ticket():
     urgency_levels=["low", "medium", "high"]
     id_number=f"T{next(gen_id):03d}"
     print("Ticket_ID:",id_number)
-    title_name=input("Enter Title:")
+    title_name=input("Enter Title:").strip()
     if title_name=="":
         print("title cannot be blank")
         return
-    print("*Selcet Category*")
-    print("1. Network")
-    print("2. Hardware")
-    print("3. Software")
-    print("4. Ohter")
-    category_name=input("choose category:")
-    if category_name =="1":
-        print(categories[0])
-        category=categories[0]
-    elif category_name=="2":
-        print(categories[1])
-        category=categories[1]
-    elif category_name=="3":
-        print(categories[2])
-        category=categories[2]
-    elif category_name=="4":
-        print(categories[3])
-        category=categories[3]
-    else:
-        print("invalid selection")
-        return
-    print("*Selcet urgency level*")
-    print("1. low")
-    print("2. medium")
-    print("3. high")
-    urgency=input("select urgency level:")
-    if urgency=="1":
-        print(f"urgency:{urgency_levels[0]}")
-        urgent=urgency_levels[0]
-    elif urgency=="2":
-        print(f"urgency:{urgency_levels[1]}")
-        urgent=urgency_levels[1]
-    elif urgency=="3":
-        print(f"urgency:{urgency_levels[2]}")
-        urgent=urgency_levels[2]
-    else:
-        print("invalid selection")
-        return
-    try:
-        affected_users=int(input("how many users are affected:"))
-        if affected_users > 0:
-            pass
+    while True:
+        print("*Selcet Category*")
+        print("1. Network")
+        print("2. Hardware")
+        print("3. Software")
+        print("4. Ohter")
+        category_name=input("choose category:")
+        if category_name =="1":
+            print(categories[0])
+            category=categories[0]
+            break
+        elif category_name=="2":
+            print(categories[1])
+            category=categories[1]
+            break
+        elif category_name=="3":
+            print(categories[2])
+            category=categories[2]
+            break
+        elif category_name=="4":
+            print(categories[3])
+            category=categories[3]
+            break
         else:
-            print("invalid number")
-    except ValueError:
-        print("invalid number")
-        return  
+            print("invalid selection")
+    while True:
+        print("*Selcet urgency level*")
+        print("1. low")
+        print("2. medium")
+        print("3. high")
+        urgency=input("select urgency level:")
+        if urgency=="1":
+            print(f"urgency:{urgency_levels[0]}")
+            urgent=urgency_levels[0]
+            break
+        elif urgency=="2":
+            print(f"urgency:{urgency_levels[1]}")
+            urgent=urgency_levels[1]
+            break
+        elif urgency=="3":
+            print(f"urgency:{urgency_levels[2]}")
+            urgent=urgency_levels[2]
+            break
+        else:
+            print("invalid selection")
+    while True:
+        try:
+            affected_users=int(input("how many users are affected:"))
+            if affected_users <=0:
+                print("number must be greater than zero")
+            else:
+                break
+        except ValueError:
+            print("invalid number") 
     priority= urgency
     priorities=""
     if priority=="3" and affected_users >=10:
@@ -116,4 +123,3 @@ def Create_ticket():
         print("Data successfully saved")
     else:
         pass
-
