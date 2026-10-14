@@ -29,10 +29,12 @@ def Create_ticket():
     urgency_levels=["low", "medium", "high"]
     id_number=f"T{next(gen_id):03d}"
     print("Ticket_ID:",id_number)
-    title_name=input("Enter Title:").strip()
-    if title_name=="":
-        print("title cannot be blank")
-        return
+    while True:
+        title_name=input("Enter Title:").strip()
+        if title_name=="":
+            print("title cannot be blank")
+        else:
+            break
     while True:
         print("*Selcet Category*")
         print("1. Network")
