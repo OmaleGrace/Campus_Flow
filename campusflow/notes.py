@@ -7,9 +7,15 @@ def add_ticket_note(tickets):
         return
     while True:
         ticket_id = input("Enter ticket ID: ").strip().upper()
-        ticket = tickets[ticket_id]
+        if ticket_id in tickets:
+            ticket = tickets[ticket_id]
         if ticket_id not in tickets:
             print("Error: Ticket ID does not exist.")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return 
     
         elif ticket["status"].strip().lower() == "resolved":
             print("Error: Cannot add notes to a resolved ticket.")
@@ -19,6 +25,11 @@ def add_ticket_note(tickets):
         author = input("Enter your name: ").strip()
         if not author:
             print("Error: Author name cannot be empty.")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return 
         else:
             break
     while True:
@@ -39,6 +50,11 @@ def add_ticket_note(tickets):
             with open("database.json", "w") as file:
                 json.dump(tickets, file, indent=4)
             print(f"Success: Note {note_id} added to ticket {ticket_id}.")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return 
         except OSError:
             print("Error saving the note to database.")
  
