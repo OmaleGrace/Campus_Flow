@@ -1,22 +1,12 @@
 {
     "T001": {
         "id": "T001",
-        "title": "Grace",
+        "title": "Campus Wi-Fi is down",
         "category": "Network",
         "urgency": "high",
-        "affected_users": 15,
+        "affected_users": 12,
         "priority": "critical",
         "status": "resolved",
         "assigned_to": "Grace"
-    },
-    "T002": {
-        "id": "T002",
-        "title": "gh",
-        "category": "Network",
-        "urgency": "medium",
-        "affected_users": 10,
-        "priority": "high",
-        "status": "Open",
-        "assigned_to": null
     }
 }
