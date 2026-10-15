@@ -5,9 +5,11 @@ import os
 def read_data():
     if os.path.exists("database.json"):
         with open("database.json", "r") as file:
-            reload_data=json.load(file)
-        print("Data successfully reloaded.")
-        return reload_data
+            try:
+                reload_data=json.load(file)
+                print("Data successfully reloaded.")
+            except json.JSONDecodeError:
+                return {}
     else:
         print("No data stored")
         return {}
