@@ -111,14 +111,14 @@ def Create_ticket():
     assigned_to=None
     print(f"assigned:{assigned_to}")
     result={
-        "id":id_number,
-        "title":title_name,
-        "category":category,
-        "urgency":urgent,
-        "affected_users":affected_users,
-        "priority":priorities,
-        "status":status,
-        "assigned_to":assigned_to
+      "id":id_number,
+    "title":title_name,
+    "category":category,
+    "urgency":urgent,
+    "affected_users":affected_users,
+    "priority":priorities,
+    "status":status,
+    "assigned_to":assigned_to
     }
     tickets_database[id_number]=result
     with open("database.json", "w") as file:
