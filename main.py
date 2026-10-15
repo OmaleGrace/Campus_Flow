@@ -5,6 +5,8 @@ from campusflow.assign_ticket import assign_ticket
 from campusflow.workflow import change_ticket_status
 from campusflow.work_queue import display_work_queue
 from campusflow.reports import display_report
+from campusflow.notes import add_ticket_note
+from campusflow.view_note import view_ticket_notes
 
 
 def campus_flow():
@@ -23,7 +25,9 @@ def campus_flow():
         print("5. Reports")
         print("6. Change Ticket Status")
         print("7. Work Queue")
-        print("8. Exit")
+        print("8. Add Follow-up Note")
+        print("9. View Ticket Notes")
+        print("10. Exit")
         option = input("Select option: ")
         if option == "1":
             Create_ticket()
@@ -40,6 +44,10 @@ def campus_flow():
         elif option == "7":
             display_work_queue(tickets_database)
         elif option == "8":
+            add_ticket_note(tickets_database)
+        elif option == "9":
+            view_ticket_notes(tickets_database)
+        elif option == "10":
             print("Exited...")
             break
         else:
