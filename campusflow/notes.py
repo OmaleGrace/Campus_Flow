@@ -57,4 +57,5 @@ def add_ticket_note(tickets):
                 return 
         except OSError:
             print("Error saving the note to database.")
+            
  
