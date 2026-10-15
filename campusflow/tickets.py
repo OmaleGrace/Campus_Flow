@@ -36,6 +36,11 @@ def Create_ticket():
         title_name=input("Enter Title:").strip()
         if title_name=="":
             print("title cannot be blank")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return     
         else:
             break
     while True:
@@ -63,6 +68,11 @@ def Create_ticket():
             break
         else:
             print("invalid selection")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return 
     while True:
         print("*Selcet urgency level*")
         print("1. low")
@@ -83,15 +93,30 @@ def Create_ticket():
             break
         else:
             print("invalid selection")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return 
     while True:
         try:
             affected_users=int(input("how many users are affected:"))
             if affected_users <=0:
                 print("number must be greater than zero")
+                answer=input("continue? y/n:").lower()
+                if answer=="y":
+                    pass
+                elif answer=="n":
+                    return 
             else:
                 break
         except ValueError:
-            print("invalid number") 
+            print("invalid number")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                pass
+            elif answer=="n":
+                return  
     priority= urgency
     priorities=""
     if priority=="3" and affected_users >=10:
