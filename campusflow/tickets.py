@@ -8,6 +8,7 @@ def read_data():
             try:
                 reload_data=json.load(file)
                 print("Data successfully reloaded.")
+                return reload_data
             except json.JSONDecodeError:
                 return {}
     else:
@@ -127,3 +128,4 @@ def Create_ticket():
         print("Data successfully saved")
     else:
         pass
+    
