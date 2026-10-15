@@ -136,7 +136,7 @@ def Create_ticket():
     assigned_to=None
     print(f"assigned:{assigned_to}")
     result={
-         "id":id_number,
+      "id":id_number,
     "title":title_name,
     "category":category,
     "urgency":urgent,
@@ -154,4 +154,3 @@ def Create_ticket():
         print("Data successfully saved")
     else:
         pass
-    
