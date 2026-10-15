@@ -3,7 +3,7 @@ from campusflow.tickets import read_data
 def view_ticket():
     tickets_database=read_data
     choose=input("Enter Ticket_ID:")
-    if choose in tickets_database() or tickets_database() !={}:
+    if choose in tickets_database() and tickets_database() !={}:
         print("*Ticket Details*")
         print(tickets_database()[choose])
     else:
