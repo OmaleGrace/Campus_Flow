@@ -8,7 +8,7 @@ def add_note(ticket_id, author, message):
         raise ValueError("Ticket ID cannot be empty.")   
     if not author or author.strip() == "":
         raise ValueError("Author name cannot be empty.")  
-    if not message or len(message.strip()) < 5:
+    if not message or len(message.strip()) < 5 or len(message.strip())>300:
         raise ValueError("Note message must be at least 5 characters long.")
 
     filename = "database.json"
@@ -20,7 +20,7 @@ def add_note(ticket_id, author, message):
             data = json.load(file)
     except (json.JSONDecodeError, IOError):
         raise ValueError("Database error: Failed to read the JSON file.")
-        
+
     if ticket_id_strip not in data:
         raise ValueError(f"Ticket {ticket_id_strip} not found in the system.")
 
