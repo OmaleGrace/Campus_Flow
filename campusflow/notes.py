@@ -36,6 +36,13 @@ def add_ticket_note(tickets):
         message = input("Enter note message: ").strip()
         if len(message) < 5 or len(message) > 300:
             print("Error: Message must be between 5 and 300 characters.")
+            answer=input("continue? y/n:").lower()
+            if answer=="y":
+                continue
+            elif answer=="n":
+                return
+            else:
+                break 
         if "notes" not in ticket:
             ticket["notes"] = []
         next_number = len(ticket["notes"]) + 1
@@ -50,11 +57,7 @@ def add_ticket_note(tickets):
             with open("database.json", "w") as file:
                 json.dump(tickets, file, indent=4)
             print(f"Success: Note {note_id} added to ticket {ticket_id}.")
-            answer=input("continue? y/n:").lower()
-            if answer=="y":
-                pass
-            elif answer=="n":
-                return 
+            break
         except OSError:
             print("Error saving the note to database.")
             
