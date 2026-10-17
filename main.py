@@ -11,7 +11,6 @@ from campusflow.reports import display_report
 def campus_flow():
     while True:
         design="🀫"*51
-        design = "🀫" * 50
         print()
         print("****Welcome To CampusFlow Helper Desk Service****")
         print(design)
@@ -24,9 +23,7 @@ def campus_flow():
         print("5. Reports")
         print("6. Change Ticket Status")
         print("7. Work Queue")
-        print("8. Add Follow-up Note")
-        print("9. View Ticket Notes")
-        print("10. Exit")
+        print("8. Exit")
         option = input("Select option: ")
         if option == "1":
             Create_ticket()
