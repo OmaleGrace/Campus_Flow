@@ -5,8 +5,7 @@ from campusflow.assign_ticket import assign_ticket
 from campusflow.workflow import change_ticket_status
 from campusflow.work_queue import display_work_queue
 from campusflow.reports import display_report
-from campusflow.notes import add_ticket_note
-from campusflow.view_note import view_ticket_notes
+
 
 
 def campus_flow():
