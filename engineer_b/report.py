@@ -46,3 +46,23 @@ def report_panel():
         "resolution_percentage": resolution_percentage
     }
     return record
+def print_summary_table():
+    panel = report_panel()
+    print(f"\n{'SUMMARY MATRICS' :<25} | {'COUNT / VALUE'}")
+    print("-" * 45)
+
+    print(f"{'Total Tickets': <25} | {panel['total_counts']}")
+    print(f"{'Resolved Tickets':<25} | {panel['resolved_counts']}")
+    print(f"{'Unresolved Tickets':<25} | {panel['unresolved_counts']}")
+    print(f"{'Resolution Rate':<25} | {panel['resolution_percentage']}")
+    print("-" * 45)
+
+    breakdowns ={
+        "Status Breakdown": panel["status_counts"],
+        "Priority Breakdown": panel["priority_counts"],
+        "Category Breakdown": panel["category_counts"]
+    }
+    for title, breakdown_dic in breakdowns.items(): 
+        print(f"\n[{title}]")
+        for key, value in breakdown_dic.items():
+            print(f" {key.capitalize():<23} | {value}")
